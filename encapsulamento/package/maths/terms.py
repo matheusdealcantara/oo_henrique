@@ -40,60 +40,57 @@ class Parabola:
     
 class Ponto:
     def __init__(self, x, y, cor):
-        self.__x = x
-        self.__y = y 
+        self._x = x
+        self._y = y 
         self.__cor = cor
         
     def setX(self, x):
         if type(x) == int:
-            self.__x = x
+            self._x = x
         else:
-            self.__x = x
+            self._x = x
     
-    def getX(self, x):
-        return self.__x   
+    def getX(self):
+        return self._x   
     
     def setY(self, y):
         if type(y) == int:
-            self.__y = y
+            self._y = y
         else:
-            self.__y = y
+            self._y = y
     
-    def getY(self, y):
-        return self.__y  
+    def getY(self):
+        return self._y  
+    
+    def setCor(self, cor):
+        self.__cor = cor
+        
+    def getCor(self):
+        return self.__cor
 
 class Circulo(Ponto):
-    def __init__(self, x, y):
-        self.__x = x
-        self.__y = y
+    def __init__(self, raio, x, y, cor):
+        super().__init__(x, y, cor)
+        self.__raio = raio
         
-    def setX(self, x):
-        if type(x) == int:
-            self.__x = x
+    def setRaio(self, raio):
+        if type(raio) == int:
+            self.__raio = raio
         else:
-            self.__x = 0
+            self.__raio = 0 
             
-    def getX(self):
-        return self.__x
-    
-    def setY(self, y):
-        if type(y) == int:
-            self.__y = y
-        else:
-            self.__y = 0
-            
-    def getY(self):
-        return self.__y
-    
-    def raio(self):
-        return sqrt((self.__x**2 + self.__y**2))
-    
+    def getRaio(self):
+        return self.__raio 
+
+    def model(self):
+        print(f'A coordenada do círculo é: ({self._x}, {self._y}) e seu raio é: {self.__raio}')
+
     def diametro(self):
-        return sqrt((self.__x**2 + self.__y**2))*2
+        return self.__raio*2
     
     def area(self):
-        return pi*(sqrt((self.__x**2 + self.__y**2))**2)
+        return pi*(self.__raio**2)
     
     def circunferencia(self):
-        return 2*pi*sqrt((self.__x**2 + self.__y**2))
+        return 2*pi*self.__raio
    
