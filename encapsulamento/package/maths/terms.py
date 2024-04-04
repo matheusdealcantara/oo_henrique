@@ -38,7 +38,31 @@ class Parabola:
         y = self.a*(x**2) + self.b*x + self.c
         return y
     
-class Circulo:
+class Ponto:
+    def __init__(self, x, y, cor):
+        self.__x = x
+        self.__y = y 
+        self.__cor = cor
+        
+    def setX(self, x):
+        if type(x) == int:
+            self.__x = x
+        else:
+            self.__x = x
+    
+    def getX(self, x):
+        return self.__x   
+    
+    def setY(self, y):
+        if type(y) == int:
+            self.__y = y
+        else:
+            self.__y = y
+    
+    def getY(self, y):
+        return self.__y  
+
+class Circulo(Ponto):
     def __init__(self, x, y):
         self.__x = x
         self.__y = y
@@ -73,25 +97,3 @@ class Circulo:
     def circunferencia(self):
         return 2*pi*sqrt((self.__x**2 + self.__y**2))
    
-class Ponto:
-    def __init__(self, x, y):
-        self.__x = x
-        self.__y = y 
-        
-    def setX(self, x):
-        if type(x) == int:
-            self.__x = x
-        else:
-            self.__x = x
-    
-    def getX(self, x):
-        return self.__x   
-    
-    def setY(self, y):
-        if type(y) == int:
-            self.__y = y
-        else:
-            self.__y = y
-    
-    def getY(self, y):
-        return self.__y  
