@@ -83,7 +83,7 @@ class Circulo(Ponto):
         return self.__raio 
 
     def model(self):
-        print(f'A coordenada do círculo é: ({self._x}, {self._y}) e seu raio é: {self.__raio}')
+        print(f'A coordenada do círculo é: ({self.getX()}, {self._y}) e seu raio é: {self.__raio}')
 
     def diametro(self):
         return self.__raio*2
