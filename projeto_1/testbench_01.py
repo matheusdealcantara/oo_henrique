@@ -6,9 +6,10 @@ def workspace():
     meu_primeiro_objeto.setA(3)
     meu_primeiro_objeto.setB(3)
     meu_primeiro_objeto.model()
-    print(f'Interpolando o número  na reta: y = {meu_primeiro_objeto.interpolar(4)}')
+    print(f'Interpolando o número 4 na reta: \
+y = {meu_primeiro_objeto.interpolar(4)}')
     
-
+    
 if __name__ == "__main__":
     print("O arquivo 'testbench_01.py' foi invocado como programa")
     print(f"__name__ == {__name__}")

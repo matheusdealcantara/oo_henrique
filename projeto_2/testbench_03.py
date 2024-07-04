@@ -8,12 +8,18 @@ def workspace():
 
     circulo_1.model()
     ponto_1.model()
-    quadro.adiciona_forma(circulo_1.name, circulo_1._x, circulo_1._y)
+    quadro.adiciona_forma(circulo_1.__name, circulo_1._x, circulo_1._y)
     quadro.print_formas()
-    quadro.adiciona_forma("ponto", ponto_1._x, ponto_1._y)
+    quadro.adiciona_forma(ponto_1.__name, ponto_1._x, ponto_1._y)
     print("=========================")
     quadro.print_formas()
 
 
 if __name__ == "__main__":
+    print("Testbench 03 foi invocado como programa")
+    print("-"*30)
+    workspace()
+else:
+    print("Testbench 03 foi invocado como módulo")
+    print("-"*30)
     workspace()

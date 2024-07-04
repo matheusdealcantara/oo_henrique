@@ -1,13 +1,11 @@
-from package.maths.terms import Reta
+from package.maths.terms import Quadrado
 
 
 def workspace():
-    meu_primeiro_objeto = Reta(2, 3)
-    meu_primeiro_objeto.setA(3)
-    meu_primeiro_objeto.setB(3)
-    meu_primeiro_objeto.model()
-    print(f'Interpolando o número  na reta: y = {meu_primeiro_objeto.interpolar(4)}')
-    
+    quadrado_1 = Quadrado(3, 4, 2)
+    quadrado_1.model()
+    print(f'A área do quadrado é igual: {quadrado_1.area()}')	
+
 
 if __name__ == "__main__":
     print("O arquivo 'testbench_01.py' foi invocado como programa")
@@ -16,4 +14,3 @@ if __name__ == "__main__":
 else:
     print("O arquivo 'testbench_01.py' foi invocado como modulo")
     print(f'__name__ == {__name__}')
-

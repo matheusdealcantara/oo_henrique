@@ -1,8 +1,7 @@
 from package.maths.terms import Circulo
 
-
 def workspace():
-    meu_circulo = Circulo(2, 2, 2)
+    meu_circulo = Circulo(2, 2, 2, "azul")
     meu_circulo.setX(3)
     meu_circulo.setY(4)
     meu_circulo.setRaio(5)
