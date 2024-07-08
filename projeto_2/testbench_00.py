@@ -8,4 +8,8 @@ def workspace():
 
 
 if __name__ == "__main__":
+    print("O arquivo 'testbench_00.py' foi invocado como programa")
+    workspace()
+else:
+    print("O arquivo 'testbench_00.py' foi invocado como modulo")
     workspace()

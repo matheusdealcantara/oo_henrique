@@ -1,25 +1,18 @@
-from package.maths.terms import Circulo, Ponto, WhiteBoard
+from package.maths.terms import Quadrado
 
 
 def workspace():
-    quadro = WhiteBoard()
-    circulo_1 = Circulo(3, 2, 2)
-    ponto_1 = Ponto(1, 2)
-
-    circulo_1.model()
-    ponto_1.model()
-    quadro.adiciona_forma(circulo_1.__name, circulo_1._x, circulo_1._y)
-    quadro.print_formas()
-    quadro.adiciona_forma(ponto_1.__name, ponto_1._x, ponto_1._y)
-    print("=========================")
-    quadro.print_formas()
+    quadrado_1 = Quadrado(3, 4, 2)
+    quadrado_1.model()
+    print(f'A área do quadrado é igual: {quadrado_1.area()}')
+    print(f'O perímetro do quadrado é: {quadrado_1.perimetro()}')
+    print(f'A diagonal do quadrado é: {quadrado_1.diagonal():.2f}')
 
 
 if __name__ == "__main__":
-    print("Testbench 03 foi invocado como programa")
-    print("-"*30)
+    print("O arquivo 'testbench_03.py' foi invocado como programa")
+    print(f"__name__ == {__name__}")
     workspace()
 else:
-    print("Testbench 03 foi invocado como módulo")
-    print("-"*30)
-    workspace()
+    print("O arquivo 'testbench_03.py' foi invocado como modulo")
+    print(f'__name__ == {__name__}')

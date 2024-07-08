@@ -3,6 +3,15 @@ from package.maths.terms import Ponto
 
 def workspace():
     ponto_1 = Ponto(3, 1)
+    ponto_1.model()
+
+    ponto_1.x = 4
+    ponto_1.y = 5
+
+    ponto_1.model()
+
+    ponto_1.x = -3
+    ponto_1.y = -2
 
     ponto_1.model()
 
