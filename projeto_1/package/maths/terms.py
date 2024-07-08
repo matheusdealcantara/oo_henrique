@@ -85,7 +85,8 @@ class Circulo(Ponto):
             self.__raio = 0
 
     def model(self):
-        print(f'A coordenada do círculo é: ({self._x}, {self._y}) e seu raio é: {self.__raio}')
+        print(f'A coordenada do círculo é: ({self._x}, {self._y}) '
+              f'e seu raio é: {self.__raio}')
 
     def diametro(self):
         return self.__raio*2
@@ -118,7 +119,7 @@ class Quadrado(Ponto):
 
     def perimetro(self):
         return 4*self.lado
-    
+   
     def diagonal(self):
         return self.lado*sqrt(2)
 
@@ -147,7 +148,7 @@ class Triangulo(Ponto):
     @property
     def altura(self):
         return self._altura
-    
+   
     @altura.setter
     def altura(self, altura):
         if altura is int and altura >= 0:
@@ -163,4 +164,20 @@ class Triangulo(Ponto):
 
     def model(self):
         print(f'A coordenada do Triângulo é: ({self._x}, {self._y}) '
-              'e sua base: {self.base} e sua altura: {self.altura}')
+              f'sua base: {self.base} e sua altura: {self.altura}')
+
+
+class Quadro():
+    def __init__(self):
+        self.formas = []
+        
+    def adiciona_forma(self, forma, x, y):
+        try:
+            model = {
+                'nome': f'{forma.__class__.__name__}',
+                'x': x,
+                'y': y,
+            }
+            self.formas.append(model)
+        except Exception as e:
+            print(f'Erro ao adicionar forma: {e}')
