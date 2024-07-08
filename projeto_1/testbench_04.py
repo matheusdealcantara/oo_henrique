@@ -4,7 +4,8 @@ from package.maths.terms import Triangulo
 def workspace():
     triangulo = Triangulo(4, 2, 3, 5)
     triangulo.model()
-    return
+    print(f'A área do triângulo é: {triangulo.area()}')
+    print(f'O perímetro do triângulo é: {triangulo.perimetro()}')
 
 
 if __name__ == '__main__':
