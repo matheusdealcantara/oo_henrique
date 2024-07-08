@@ -8,6 +8,7 @@ def workspace():
     print(f'O diametro do circulo é: {meu_circulo.diametro():.2f}')
     print(f'A circunferencia do círculo é: {meu_circulo.circunferencia():.2f}')
 
+    print('='*30)
     meu_circulo.x = 3
     meu_circulo.y = 4
     meu_circulo.raio = 5
