@@ -140,7 +140,7 @@ class Triangulo(Ponto):
     
     @base.setter
     def base(self, base):
-        if base is int and base >= 0:
+        if isinstance(base, int) and base >= 0:
             self._base = base
         else:
             self._base = 0
@@ -151,7 +151,7 @@ class Triangulo(Ponto):
    
     @altura.setter
     def altura(self, altura):
-        if altura is int and altura >= 0:
+        if isinstance(altura, int) and altura >= 0:
             self._altura = altura
         else:
             self._altura = 0
