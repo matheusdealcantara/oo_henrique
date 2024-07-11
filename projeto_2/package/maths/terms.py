@@ -33,6 +33,66 @@ class Ponto:
         print(f'A coordenada do {self._name} é: ({self.x}, {self.y})')
 
 
+class Segmento(Ponto):
+    def __init__(self, x1, y1, x2, y2):
+        self.x1 = x1
+        self.y1 = y1
+        self.x2 = x2
+        self.y2 = y2
+        self._name = __class__.__name__
+
+    @property
+    def x1(self):
+        return self._x1
+    
+    @x1.setter
+    def x1(self, x1):
+        if isinstance(x1, int) and x1 >= 0:
+            self._x1 = x1
+        else:
+            self._x1 = 0
+
+    @property
+    def y1(self):
+        return self._y1
+    
+    @y1.setter
+    def y1(self, y1):
+        if isinstance(y1, int) and y1 >= 0:
+            self._y1 = y1
+        else:
+            self._y1 = 0
+
+    @property
+    def x2(self):
+        return self._x2
+    
+    @x2.setter
+    def x2(self, x2):
+        if isinstance(x2, int) and x2 >= 0:
+            self._x2 = x2
+        else:
+            self._x2 = 0
+
+    @property
+    def y2(self):
+        return self._y2
+    
+    @y2.setter
+    def y2(self, y2):
+        if isinstance(y2, int) and y2 >= 0:
+            self._y2 = y2
+        else:
+            self._y2 = 0
+
+    def model(self):
+        print(f'As coordenadas dos pontos do {self._name} são: '
+              f'({self.x1}, {self.y1}) e ({self.x2}, {self.y2})')
+
+    def comprimento(self):
+        return sqrt((self.x2 - self.x1)**2 + (self.y2 - self.y1)**2) 
+
+
 class Reta: 
     def __init__(self, a, b) -> None:
         self.a = a
