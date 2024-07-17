@@ -255,8 +255,7 @@ class Menu(WhiteBoard):
         forma1 = input("Digite o nome da primeira forma geométrica: ")
         forma2 = input("Digite o nome da segunda forma geométrica: ")
         print(f"A distância entre {forma1} e {forma2} é: "
-              f"{self.quadro.distancia(forma1, forma2)}")
-
+              f"{self.quadro.distancia(forma1, forma2):.2f}")
 
     def run(self):
         while True:
