@@ -139,14 +139,16 @@ class Menu(WhiteBoard):
             "3": self.update,
             "4": self.delete,
             "5": self.interferencia,
-            "6": exit
+            "6": self.distancia,
+            "7": exit
         }
 
     def create(self):
         print("As formas geométricas disponíveis são: "
               "Circulo, Ponto, Quadrado e Triangulo")
         forma = input("Digite a forma geométrica desejada "
-                      "(1 - Circulo, 2 - Ponto, 3 - Quadrado, 4 - Triangulo):")
+                      "(1 - Circulo, 2 - Ponto, 3 - Quadrado, 4 - Triangulo, "
+                      " 5 - Segmento de reta):")
         switch = {
             "1": Circulo,
             "2": Ponto,
@@ -239,6 +241,23 @@ class Menu(WhiteBoard):
         forma2 = input("Digite o nome da segunda forma geométrica: ")
         self.quadro.interferencia(forma1, forma2)
 
+    def distancia(self):
+        if len(self.quadro.formas) == 0:
+            print("="*30)
+            print("Não há formas geométricas adicionadas, adicione "
+                  "pelo menos duas formas geométricas para verificar.")
+            print("="*30)
+            return
+        elif len(self.quadro.formas) == 1:
+            print("Adicione mais formas geométricas "
+                "para verificar a distância")
+            return
+        forma1 = input("Digite o nome da primeira forma geométrica: ")
+        forma2 = input("Digite o nome da segunda forma geométrica: ")
+        print(f"A distância entre {forma1} e {forma2} é: "
+              f"{self.quadro.distancia(forma1, forma2)}")
+
+
     def run(self):
         while True:
             print("Escolha uma das opções:")
@@ -247,9 +266,10 @@ class Menu(WhiteBoard):
             print("3. Atualizar forma geométrica")
             print("4. Remover forma geométrica")
             print("5. Verificar interferência entre formas geométricas")
-            print("6. Sair")
+            print("6. Calcular distância entre formas geométricas")
+            print("7. Sair")
             option = input("Digite o número da opção desejada: ")
-            if option.isdigit() and int(option) in range(1, 7):
+            if option.isdigit() and int(option) in range(1, 8):
                 command = list(self.options.keys())[int(option)-1]
                 self.options[command]()
             else:
