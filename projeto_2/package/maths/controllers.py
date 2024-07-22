@@ -63,10 +63,10 @@ class WhiteBoard():
                 forma1.base = base
                 forma1.altura = altura
             print(f"{forma} atualizado com sucesso")
-            print(forma1.model())
+            forma1.model()
         except Exception as e:
             print(f"Erro ao atualizar forma: {e}")
-            
+
     def distancia(self, forma1, forma2):
         forma_1 = self.seleciona_forma(forma1)
         forma_2 = self.seleciona_forma(forma2)

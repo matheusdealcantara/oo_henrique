@@ -11,20 +11,17 @@ def workspace():
     quadro.adiciona_forma(ponto_1)
 
     quadro.print_formas()
-
-    circulo_1.model()
     ponto_1.model()
 
-    quadro.atualiza_forma("circulo0", 3, 3, 4)
+    circulo_1.model()
 
-    # circulo_1.model()
+    quadro.atualiza_forma("circulo0", 3, 3, 4)
 
     quadro.remove_forma("circulo0")
     quadro.print_formas()
 
     circulo = Circulo(3, 2, 2)
     quadro.adiciona_forma(circulo)
-    quadro.print_details("ponto1")
     quadro.print_formas()
 
     ponto_cpy = quadro.seleciona_forma("ponto1")
@@ -40,7 +37,6 @@ def workspace():
     quadrado = Quadrado(1, 1, 2)
     quadro.adiciona_forma(quadrado)
     quadro.print_formas()
-    quadro.print_details("quadrado3")
 
     print(f'A distância entre o ponto1 e o quadrado3 é: ' 
           f'{quadro.distancia("ponto1", "quadrado3")}')
