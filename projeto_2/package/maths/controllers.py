@@ -66,15 +66,7 @@ class WhiteBoard():
             print(forma1.model())
         except Exception as e:
             print(f"Erro ao atualizar forma: {e}")
-
-    def print_details(self, forma):
-        forma1 = self.seleciona_forma(forma)
-        print("="*30)
-        forma1.model()
-        if (forma[0] != 'p' and forma[0] != 's'):
-            print(f"Área: {forma1.area()}")
-        print("="*30)
-
+            
     def distancia(self, forma1, forma2):
         forma_1 = self.seleciona_forma(forma1)
         forma_2 = self.seleciona_forma(forma2)
