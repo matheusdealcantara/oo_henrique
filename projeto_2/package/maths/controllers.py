@@ -9,9 +9,12 @@ class WhiteBoard():
         self.count = 0
 
     def seleciona_forma(self, forma):
-        for i in self.formas:
-            if i.lower() == forma.lower():
-                return self.formas[i]
+        try:
+            for i in self.formas:
+                if i.lower() == forma.lower():
+                    return self.formas[i]
+        except Exception as e:
+            print(f"Erro ao selecionar forma: {e}")
 
     def adiciona_forma(self, forma):
         try:
@@ -65,13 +68,10 @@ class WhiteBoard():
             print(f"Erro ao atualizar forma: {e}")
 
     def print_details(self, forma):
-        for i in self.formas:
-            if i.lower() == forma.lower():
-                forma1 = self.formas[i]
-                break
+        forma1 = self.seleciona_forma(forma)
         print("="*30)
         forma1.model()
-        if (forma[0] != 'p'):
+        if (forma[0] != 'p' and forma[0] != 's'):
             print(f"Área: {forma1.area()}")
         print("="*30)
 
