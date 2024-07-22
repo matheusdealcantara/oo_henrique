@@ -62,8 +62,10 @@ class WhiteBoard():
             elif base and altura:
                 forma1.base = base
                 forma1.altura = altura
+            print("="*30)
             print(f"{forma} atualizado com sucesso")
             forma1.model()
+            print("="*30)
         except Exception as e:
             print(f"Erro ao atualizar forma: {e}")
 
@@ -85,9 +87,13 @@ class WhiteBoard():
             return 1
 
     def interferencia(self, forma1, forma2):
-        forma_1 = self.seleciona_forma(forma1)
-        forma_2 = self.seleciona_forma(forma2)
+        try:
+            forma_1 = self.seleciona_forma(forma1)
+            forma_2 = self.seleciona_forma(forma2)
+        except Exception as e:
+            print(f"Erro ao verificar interferência: {e}")
 
+        print("="*30)
         if (forma1[0] == 'p' and forma2[0] == 'p'):
             if (self.distancia(forma1, forma2) == 0):
                 print(f"{forma1} e {forma2} estão no mesmo ponto")
@@ -112,14 +118,15 @@ class WhiteBoard():
                 print(f"{forma1} não está dentro de {forma2}")
         elif (forma1[0] == 'p' and forma2[0] == 's'):
             if (self.distancia(forma1, forma2) == forma_2.comprimento()):
-                print(f"{forma1} está dentro de {forma2}")
+                print(f"{forma1} pertence ao {forma2}")
             else:
-                print(f"{forma1} não está dentro de {forma2}")
+                print(f"{forma1} não pertence ao {forma2}")
         else:
             if (self.distancia(forma1, forma2) <= forma_1.raio + forma_2.raio):
                 print(f"{forma1} e {forma2} estão em contato")
             else:
                 print(f"{forma1} e {forma2} não estão em contato")
+        print("="*30)
 
 
 class Menu(WhiteBoard):
