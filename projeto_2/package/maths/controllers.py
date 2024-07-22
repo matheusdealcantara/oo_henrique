@@ -74,7 +74,7 @@ class WhiteBoard():
         if (forma[0] != 'p'):
             print(f"Área: {forma1.area()}")
         print("="*30)
-    
+
     def distancia(self, forma1, forma2):
         forma_1 = self.seleciona_forma(forma1)
         forma_2 = self.seleciona_forma(forma2)
@@ -91,7 +91,7 @@ class WhiteBoard():
         else:
             print("Forma geométrica não encontrada")
             return 1
-           
+
     def interferencia(self, forma1, forma2):
         forma_1 = self.seleciona_forma(forma1)
         forma_2 = self.seleciona_forma(forma2)
@@ -108,13 +108,13 @@ class WhiteBoard():
                 print(f"{forma1} não está dentro de {forma2}")
         elif (forma1[0] == 'p' and forma2[0] == 'q'):
             if (self.distancia(forma1, forma2) <= forma_2.lado/2 and
-                self.distancia(forma1, forma2) <= forma_2.diagonal()/2):
+                    self.distancia(forma1, forma2) <= forma_2.diagonal()/2):
                 print(f"{forma1} está dentro de {forma2}")
             else:
                 print(f"{forma2} não está dentro de {forma1}")
         elif (forma1[0] == 'p' and forma2[0] == 't'):
             if (self.distancia(forma1, forma2) <= forma_2.base/2 and
-                self.distancia(forma1, forma2) <= forma_2.altura/2):
+                    self.distancia(forma1, forma2) <= forma_2.altura/2):
                 print(f"{forma1} está dentro de {forma2}")
             else:
                 print(f"{forma1} não está dentro de {forma2}")
@@ -131,7 +131,7 @@ class WhiteBoard():
 
 
 class Menu(WhiteBoard):
-    
+
     def __init__(self):
         self.quadro = WhiteBoard()
         self.options = {
@@ -150,7 +150,7 @@ class Menu(WhiteBoard):
         def tutorial(self):
             print("="*30)
             print("Tutorial de uso:")
-            print("1. Adicionar forma geométrica: Adiciona uma forma " 
+            print("1. Adicionar forma geométrica: Adiciona uma forma "
                   "geométrica ao quadro branco")
             print("2. Imprimir formas geométricas: Imprime as formas "
                   "geométricas adicionadas ao quadro branco")
