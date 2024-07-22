@@ -93,6 +93,12 @@ class WhiteBoard():
         except Exception as e:
             print(f"Erro ao verificar interferência: {e}")
 
+        if (forma1[0] != 'p'):
+            print("="*30)
+            print(f"{forma1} não é um ponto")
+            print("="*30)
+            return
+
         print("="*30)
         if (forma1[0] == 'p' and forma2[0] == 'p'):
             if (self.distancia(forma1, forma2) == 0):
