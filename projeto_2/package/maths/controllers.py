@@ -291,8 +291,9 @@ class Menu(WhiteBoard):
             print("5. Verificar interferência entre formas geométricas")
             print("6. Calcular distância entre formas geométricas")
             print("7. Sair")
+            print("8. Tutorial de uso")
             option = input("Digite o número da opção desejada: ")
-            if option.isdigit() and int(option) in range(1, 8):
+            if option.isdigit() and int(option) in range(1, 9):
                 command = list(self.options.keys())[int(option)-1]
                 self.options[command]()
             else:
