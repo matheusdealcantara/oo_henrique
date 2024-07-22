@@ -131,6 +131,7 @@ class WhiteBoard():
 
 
 class Menu(WhiteBoard):
+    
     def __init__(self):
         self.quadro = WhiteBoard()
         self.options = {
@@ -141,30 +142,32 @@ class Menu(WhiteBoard):
             "5": self.interferencia,
             "6": self.distancia,
             "7": exit,
-            "8": self.tutorial,
+            "8": self.tutorial
         }
 
-    def tutorial(self):
-        print("="*30)
-        print("Tutorial de uso:")
-        print("1. Adicionar forma geométrica: Adiciona uma forma geométrica "
-              "ao quadro branco")
-        print("2. Imprimir formas geométricas: Imprime as formas geométricas "
-              "adicionadas ao quadro branco")
-        print("3. Atualizar forma geométrica: Atualiza as coordenadas de uma "
-              "forma geométrica adicionada ao quadro branco")
-        print("4. Remover forma geométrica: Remove uma forma geométrica "
-              "adicionada ao quadro branco")
-        print("5. Verificar interferência entre formas geométricas: Verifica "
-              "se uma forma geométrica está dentro de outra")
-        print("6. Calcular distância entre formas geométricas: Calcula a "
-              "distância entre duas formas geométricas")
-        print("7. Sair: Encerra o programa")
-        print("="*30)
-        print("Para utilizar as funções que solicitam o nome da forma "
-              "geométrica, utilize o nome da forma seguido do número de "
-              "identificação, por exemplo: Circulo0")
-        print("="*30)
+    count = 0
+    if count == 0:
+        def tutorial(self):
+            print("="*30)
+            print("Tutorial de uso:")
+            print("1. Adicionar forma geométrica: Adiciona uma forma " 
+                  "geométrica ao quadro branco")
+            print("2. Imprimir formas geométricas: Imprime as formas "
+                  "geométricas adicionadas ao quadro branco")
+            print("3. Atualizar forma geométrica: Atualiza as coordenadas "
+                  "de uma forma geométrica adicionada ao quadro branco")
+            print("4. Remover forma geométrica: Remove uma forma geométrica "
+                  "adicionada ao quadro branco")
+            print("5. Verificar interferência entre formas geométricas: "
+                  "Verifica se uma forma geométrica está dentro de outra")
+            print("6. Calcular distância entre formas geométricas: Calcula a "
+                  "distância entre duas formas geométricas")
+            print("7. Sair: Encerra o programa")
+            print("="*30)
+            print("Para utilizar as funções que solicitam o nome da forma "
+                  "geométrica, utilize o nome da forma seguido do número de "
+                  "identificação, por exemplo: Circulo0")
+            print("="*30)
 
     def create(self):
         print("As formas geométricas disponíveis são: "
@@ -188,7 +191,7 @@ class Menu(WhiteBoard):
                 segmento = switch[forma](x1, y1, x2, y2)
                 self.quadro.adiciona_forma(segmento)
                 self.quadro.print_formas()
-            else:    
+            else:
                 x = int(input("Digite a coordenada x: "))
                 y = int(input("Digite a coordenada y: "))
                 if forma == "1":
@@ -274,7 +277,7 @@ class Menu(WhiteBoard):
             return
         elif len(self.quadro.formas) == 1:
             print("Adicione mais formas geométricas "
-                "para verificar a distância")
+                  "para verificar a distância")
             return
         forma1 = input("Digite o nome da primeira forma geométrica: ")
         forma2 = input("Digite o nome da segunda forma geométrica: ")
@@ -282,6 +285,9 @@ class Menu(WhiteBoard):
               f"{self.quadro.distancia(forma1, forma2):.2f}")
 
     def run(self):
+        count = 0
+        if count == 0:
+            self.tutorial()
         while True:
             print("Escolha uma das opções:")
             print("1. Adicionar forma geométrica")
