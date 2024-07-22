@@ -1,5 +1,5 @@
 from package.maths.controllers import WhiteBoard
-from package.maths.terms import Circulo, Ponto, Quadrado, Segmento, Triangulo
+from package.maths.terms import Circulo, Ponto, Quadrado, Segmento
 
 
 def workspace():
