@@ -157,36 +157,37 @@ class Menu(WhiteBoard):
             "5": Segmento
         }
         if forma in switch:
-            x = int(input("Digite a coordenada x: "))
-            y = int(input("Digite a coordenada y: "))
-            if forma == "1":
-                raio = int(input("Digite o raio do círculo: "))
-                circulo = switch[forma](raio, x, y)
-                self.quadro.adiciona_forma(circulo)
-                self.quadro.print_formas()
-            elif forma == "2":
-                ponto = switch[forma](x, y)
-                self.quadro.adiciona_forma(ponto)
-                self.quadro.print_formas()
-            elif forma == "3":
-                lado = int(input("Digite o lado do quadrado: "))
-                quadrado = switch[forma](lado, x, y)
-                self.quadro.adiciona_forma(quadrado)
-                self.quadro.print_formas()
-            elif forma == "4":
-                base = int(input("Digite a base do triângulo: "))
-                altura = int(input("Digite a altura do triângulo: "))
-                triangulo = switch[forma](base, altura, x, y)
-                self.quadro.adiciona_forma(triangulo)
-                self.quadro.print_formas()
-            elif forma == "5":
+            if forma == "5":
                 x1 = int(input("Digite a coordenada x1: "))
                 y1 = int(input("Digite a coordenada y1: "))
                 x2 = int(input("Digite a coordenada x2: "))
                 y2 = int(input("Digite a coordenada y2: "))
-                segmento = switch[forma](x, y, x1, y1, x2, y2)
+                segmento = switch[forma](x1, y1, x2, y2)
                 self.quadro.adiciona_forma(segmento)
                 self.quadro.print_formas()
+            else:    
+                x = int(input("Digite a coordenada x: "))
+                y = int(input("Digite a coordenada y: "))
+                if forma == "1":
+                    raio = int(input("Digite o raio do círculo: "))
+                    circulo = switch[forma](raio, x, y)
+                    self.quadro.adiciona_forma(circulo)
+                    self.quadro.print_formas()
+                elif forma == "2":
+                    ponto = switch[forma](x, y)
+                    self.quadro.adiciona_forma(ponto)
+                    self.quadro.print_formas()
+                elif forma == "3":
+                    lado = int(input("Digite o lado do quadrado: "))
+                    quadrado = switch[forma](lado, x, y)
+                    self.quadro.adiciona_forma(quadrado)
+                    self.quadro.print_formas()
+                elif forma == "4":
+                    base = int(input("Digite a base do triângulo: "))
+                    altura = int(input("Digite a altura do triângulo: "))
+                    triangulo = switch[forma](base, altura, x, y)
+                    self.quadro.adiciona_forma(triangulo)
+                    self.quadro.print_formas()
 
     def update(self):
         if len(self.quadro.formas) == 0:

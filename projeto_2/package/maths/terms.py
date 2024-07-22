@@ -33,7 +33,7 @@ class Ponto:
         print(f'A coordenada do {self._name} é: ({self.x}, {self.y})')
 
 
-class Segmento(Ponto):
+class Segmento():
     def __init__(self, x1, y1, x2, y2):
         self.x1 = x1
         self.y1 = y1
@@ -85,12 +85,13 @@ class Segmento(Ponto):
         else:
             self._y2 = 0
 
-    def model(self):
-        print(f'As coordenadas dos pontos do {self._name} são: '
-              f'({self.x1}, {self.y1}) e ({self.x2}, {self.y2})')
-
     def comprimento(self):
         return sqrt((self.x2 - self.x1)**2 + (self.y2 - self.y1)**2) 
+
+    def model(self):
+        print(f'As coordenadas dos pontos do {self._name} são: '
+              f'({self.x1}, {self.y1}) e ({self.x2}, {self.y2})'
+              f' e seu comprimento é: {self.comprimento():.2f}')
 
 
 class Reta: 
