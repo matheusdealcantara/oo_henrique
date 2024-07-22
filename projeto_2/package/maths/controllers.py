@@ -268,11 +268,10 @@ class Menu(WhiteBoard):
         self.quadro.interferencia(forma1, forma2)
 
     def distancia(self):
+        print("="*30)
         if len(self.quadro.formas) == 0:
-            print("="*30)
             print("Não há formas geométricas adicionadas, adicione "
                   "pelo menos duas formas geométricas para verificar.")
-            print("="*30)
             return
         elif len(self.quadro.formas) == 1:
             print("Adicione mais formas geométricas "
@@ -282,6 +281,7 @@ class Menu(WhiteBoard):
         forma2 = input("Digite o nome da segunda forma geométrica: ")
         print(f"A distância entre {forma1} e {forma2} é: "
               f"{self.quadro.distancia(forma1, forma2):.2f}")
+        print("="*30)
 
     def run(self):
         count = 0
